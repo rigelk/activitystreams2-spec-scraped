@@ -1,7 +1,7 @@
 import assert from "assert";
 import cheerio from "cheerio";
 import { readFileSync } from "fs";
-import fetch from "node-fetch";
+const fetch = require('@brillout/fetch');
 import * as path from "path";
 import { relative } from "path";
 import { Readable } from "stream";
@@ -63,6 +63,14 @@ export async function scrapeVocabulary(
 					"../data/activitystreams-vocabulary/1528589057.html"
 				)
 		  ));
+	const parsed = parseVocabulary(html, url || vocabularySpecUrl);
+	return parsed;
+}
+
+export async function scrapeVocabularyInBrowser(
+	url: string
+): Promise<ScrapedVocabulary> {
+	const html = await fetchHtml(url);
 	const parsed = parseVocabulary(html, url || vocabularySpecUrl);
 	return parsed;
 }

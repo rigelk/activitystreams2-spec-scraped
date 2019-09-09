@@ -27,12 +27,12 @@
 		"typescript-formatter": "^7.2.2"
 	},
 	"dependencies": {
+		"@brillout/fetch": "^0.1.2",
 		"@types/cheerio": "^0.22.7",
 		"@types/node-fetch": "^2.1.1",
 		"cheerio": "^1.0.0-rc.2",
 		"gts": "^0.6.0",
 		"jsonld": "^1.0.2",
-		"node-fetch": "^2.1.2",
 		"rdf-tools": "^0.4.4"
 	},
 	"bin": {
